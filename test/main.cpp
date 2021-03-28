@@ -8,7 +8,9 @@ struct Demo
     std::string d;
     bool e;
 
-    ESTRUCT_TYPE_DEFINE(a, b,c,d,e)
+    std::map<int, std::string> f;
+
+    ESTRUCT_TYPE_DEFINE(a, b,c,d,e, f)
 };
 
 int main()
@@ -21,6 +23,7 @@ int main()
     d.c = 3.3;
     d.d = "tyrant EStringPacker ggo";
     d.e = true;
+    d.f[332] = "ojbk";
     packer.serlize(d);
 
     EStructUnPacker up(packer.ptr(), packer.size());
